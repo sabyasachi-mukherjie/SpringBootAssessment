@@ -5,3 +5,5 @@ We can insert/create user data in the database, update the data and also retriev
 and also we can choose the output fields that we want to see in the output
 
 The required postman collections are also provided along with for easy reference.
+
+You can also insert data into queue using this application. Running at post 2020 for rabbit MQ application.
