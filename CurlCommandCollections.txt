@@ -1,0 +1,74 @@
+===================================================================
+		CREATE SAMPLE DATA IN THE DATABASE
+===================================================================
+
+curl --location --request POST 'http://localhost:2020/user/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "firstNm": "Subhabrata",
+  "lastNm": "Pal",
+  "address": "Sodepur",
+  "telephone": "8585858585",
+  "email": "shubhabrata.pal@accenture.com"
+}'
+
+curl --location --request POST 'http://localhost:2020/user/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "firstNm": "Sabyasachi",
+  "lastNm": "Mukherjee",
+  "address": "Jadavpur",
+  "telephone": "8981747454",
+  "email": "sabyasachi.mukherjee@accenture.com"
+}'
+
+curl --location --request POST 'http://localhost:2020/user/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "firstNm": "Manish",
+  "lastNm": "Sharma",
+  "address": "Behala",
+  "telephone": "775757575",
+  "email": "manish.sharma@accenture.com"
+}'
+
+curl --location --request POST 'http://localhost:2020/user/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "firstNm": "Shivayan",
+  "lastNm": "Mukherjee",
+  "address": "Uttarpara",
+  "telephone": "6565656565",
+  "email": "shivayan.mukherjee@accenture.com"
+}'
+
+curl --location --request POST 'http://localhost:2020/user/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "firstNm": "Sandip",
+  "lastNm": "Bhattacharjee",
+  "address": "Mallickpur",
+  "telephone": "9999999999",
+  "email": "sandip.bhattacharjee@accenture.com"
+}'
+
+===================================================================
+		UPDATE SINGLE DATA IN THE DATABASE
+===================================================================
+curl --location --request PUT 'http://localhost:2021/user/save' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+  "emplId": 1,
+  "firstNm": "Subhabrata",
+  "lastNm": "Pal",
+  "address": "Sodepur Station Road",
+  "telephone": "1111111111",
+  "email": "shubha.broto.pal@accenture.com"
+}'
+
+===================================================================
+		GET ALL USERS FROM DATABASE
+===================================================================
+curl --location --request GET 'http://localhost:2022/user/getall' \
+--header 'Accept: application/vnd.jcg.api.v1+json' \
+--data-raw ''
