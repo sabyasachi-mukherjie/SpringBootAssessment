@@ -58,7 +58,7 @@ curl --location --request POST 'http://localhost:2020/user/save' \
 curl --location --request PUT 'http://localhost:2021/user/save' \
 --header 'Content-Type: application/json' \
 --data-raw '{
-  "emplId": 1,
+  "emplId": 7,
   "firstNm": "Subhabrata",
   "lastNm": "Pal",
   "address": "Sodepur Station Road",
@@ -72,3 +72,19 @@ curl --location --request PUT 'http://localhost:2021/user/save' \
 curl --location --request GET 'http://localhost:2022/user/getall' \
 --header 'Accept: application/vnd.jcg.api.v1+json' \
 --data-raw ''
+
+===================================================================
+		GET 2nd USER FROM DB WITH FIRST & LAST NAME
+===================================================================
+curl --location --request GET 'http://localhost:2022/user/getall?columns=firstname,lastname&number=1&page=2' \
+--header 'Accept: application/vnd.jcg.api.v1+json' \
+--data-raw ''
+
+==================================================================================
+		GET 3rd and 4th USERS FROM DB WITH FIRST NAME, EMAIL & ADDRESS
+==================================================================================
+curl --location --request GET 'http://localhost:2022/user/getall?columns=firstname,email,address&number=2&page=2' \
+--header 'Accept: application/vnd.jcg.api.v1+json' \
+--data-raw ''
+
+
