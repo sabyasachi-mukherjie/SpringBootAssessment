@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.accenture.sabyasachi</groupId>
-	<artifactId>SpringBootServer</artifactId>
+	<artifactId>EurekaServer</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>SpringbootH2Integration</name>
+	<name>Eureka Server</name>
 	<description>This project acts as an eureka server for the discovery of clients subscribed to it and their port and ip details in a distributed environment of microservice architecture</description>
 
 	<properties>
