@@ -1,0 +1,45 @@
+server:
+  port: 2021    #default port where the service will be started
+ 
+eureka:         #tells about the Eureka server details and its refresh time
+  instance:
+    leaseRenewalIntervalInSeconds: 1
+    leaseExpirationDurationInSeconds: 2
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+    healthcheck:
+      enabled: true
+    lease:
+      duration: 5
+ 
+spring:
+  jpa:
+    hibernate:      ddl-auto: update  
+  application:
+    name: user-UpdateService   #current service name to be used by the eureka server
+  datasource:
+    url:  jdbc:mysql://localhost:3306/springbootdemo
+    #driverClassName:  org.h2.Driver
+    username: root
+    password: Accenture.1
+  h2:
+    console:
+      enabled: true
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest
+  main:
+    allow-bean-definition-overriding: true
+    
+accenture:
+  rabbitmq:
+    exchange: accenture
+    queue:  accenture.queue
+    routingKey: accenture.routingKey
+ 
+logging:
+  level:
+    com.accenture.sabyasachi: DEBUG
