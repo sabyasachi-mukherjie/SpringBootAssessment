@@ -30,10 +30,4 @@ public class UserController {
 		return service.save(user);
 	}
 
-	/* Get all the student records saved so far in H2 database */
-	@GetMapping(value = "/student/getall", produces = "application/vnd.jcg.api.v1+json")
-	public List<User> getAll() {
-		log.info("Getting student details from the database.");
-		return service.getAll();
-	}
 }

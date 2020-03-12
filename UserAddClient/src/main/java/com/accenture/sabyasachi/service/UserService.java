@@ -22,20 +22,4 @@ public class UserService {
 		return user;
 	}
 
-	/* Gets all the student entities saved so far from H2 database */
-	public List<User> getAll() {
-		final List<User> users = new ArrayList<>();
-		repository.findAll().forEach(user -> users.add(user));
-		return users;
-	}
-
-	/* Updates the student entity into H2 database */
-	public Object update(final User user) {
-		Optional<User> existingStudent = repository.findById(user.getEmplId());
-		if (existingStudent.isPresent()) {
-			save(user);
-			return user;
-		}
-		return "No student record found for update in DB";
-	}
 }
