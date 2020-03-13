@@ -8,7 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 
-import com.accenture.sabyasachi.model.User;
+import com.accenture.sabyasachi.model.UserEntity;
 import com.accenture.sabyasachi.repository.UserRepository;
 
 @Service
@@ -26,14 +26,14 @@ public class UserService {
 	}
 
 	/* Gets all the student entities saved so far from H2 database */
-	public List<User> getAll(String columns, String records, String pageNo) {
-		final List<User> users = new ArrayList<>();
+	public List<UserEntity> getAll(String columns, String records, String pageNo) {
+		final List<UserEntity> users = new ArrayList<>();
 		repository.findAll().forEach(user -> users.add(user));
 		return modifyResult(columns, records, pageNo, users);
 	}
 
-	private List<User> modifyResult(String columns, String records, String pageNo, List<User> users) {
-		List<User> modifiedUsers = new ArrayList<User>();
+	private List<UserEntity> modifyResult(String columns, String records, String pageNo, List<UserEntity> users) {
+		List<UserEntity> modifiedUsers = new ArrayList<>();
 		if (StringUtils.isEmpty(records) || StringUtils.isEmpty(pageNo)) {
 			modifiedUsers = users;
 		} else {
@@ -54,28 +54,28 @@ public class UserService {
 		for (String removeColumn : fields) {
 			switch (removeColumn) {
 			case "firstname":
-				for (User user : modifiedUsers) {
+				for (UserEntity user : modifiedUsers) {
 					user.setFirstNm(null);
 				}
 				break;
 
 			case "lastname":
-				for (User user : modifiedUsers) {
+				for (UserEntity user : modifiedUsers) {
 					user.setLastNm(null);
 				}
 				break;
 			case "email":
-				for (User user : modifiedUsers) {
+				for (UserEntity user : modifiedUsers) {
 					user.setEmail(null);
 				}
 				break;
 			case "telephone":
-				for (User user : modifiedUsers) {
+				for (UserEntity user : modifiedUsers) {
 					user.setTelephone(null);
 				}
 				break;
 			case "address":
-				for (User user : modifiedUsers) {
+				for (UserEntity user : modifiedUsers) {
 					user.setAddress(null);
 				}
 				break;

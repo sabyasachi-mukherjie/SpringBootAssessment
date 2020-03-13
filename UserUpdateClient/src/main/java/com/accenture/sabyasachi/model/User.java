@@ -1,14 +1,7 @@
 package com.accenture.sabyasachi.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-
-@Entity
 public class User {
 
-	@Id
-	@GeneratedValue
 	private int emplId;
 	private String firstNm;
 	private String lastNm;
@@ -34,6 +27,13 @@ public class User {
 	 */
 	public int getEmplId() {
 		return emplId;
+	}
+
+	/**
+	 * @param emplId the emplId to set
+	 */
+	public void setEmplId(int emplId) {
+		this.emplId = emplId;
 	}
 
 	/**

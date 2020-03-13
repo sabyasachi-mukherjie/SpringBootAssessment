@@ -37,6 +37,13 @@ public class UserEntity {
 	public int getEmplId() {
 		return emplId;
 	}
+	
+	/**
+	 * @param emplId the emplId to set
+	 */
+	public void setEmplId(int emplId) {
+		this.emplId = emplId;
+	}
 
 	/**
 	 * @return the firstNm
