@@ -1,7 +1,14 @@
 package com.accenture.sabyasachi.model;
 
-public class User {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class UserEntity {
+
+	@Id
+	@GeneratedValue
 	private int emplId;
 	private String firstNm;
 	private String lastNm;
@@ -9,11 +16,11 @@ public class User {
 	private String telephone;
 	private String email;
 
-	public User() {
+	public UserEntity() {
 
 	}
 
-	public User(int emplId, String firstNm, String lastNm, String address, String telephone, String email) {
+	public UserEntity(int emplId, String firstNm, String lastNm, String address, String telephone, String email) {
 		this.emplId = emplId;
 		this.firstNm = firstNm;
 		this.lastNm = lastNm;
@@ -27,13 +34,6 @@ public class User {
 	 */
 	public int getEmplId() {
 		return emplId;
-	}
-
-	/**
-	 * @param emplId the emplId to set
-	 */
-	public void setEmplId(int emplId) {
-		this.emplId = emplId;
 	}
 
 	/**
